@@ -1,0 +1,62 @@
+name: muslim_alarm
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # images and icons
+  cupertino_icons: ^1.0.8
+
+  # data
+  dio: ^5.7.0
+  shared_preferences: ^2.3.2
+
+  # managers
+  system_tray: ^2.0.3
+  window_manager: ^0.4.2
+  bitsdojo_window: ^0.1.6
+  easy_localization: ^3.0.7
+
+  # state management and models
+  flutter_riverpod: ^2.5.1
+  freezed: ^2.5.7
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+  dartz: ^0.10.1
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  json_serializable: ^6.8.0
+  build_runner:
+  flutter_gen_runner:
+
+
+flutter_gen:
+  output: lib/gen/
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+
