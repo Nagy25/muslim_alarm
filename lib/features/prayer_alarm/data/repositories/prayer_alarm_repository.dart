@@ -9,10 +9,11 @@ import 'package:muslim_alarm/features/prayer_alarm/domain/entities/timings.dart'
 import 'package:muslim_alarm/features/prayer_alarm/domain/repositories/prayer_alarm_repository.dart';
 
 class PrayerAlarmRepositoryImpl implements PrayerAlarmRepository {
-  static final provider = Provider((ref) => PrayerAlarmRepositoryImpl(
-        timingsDataSource: PrayersTimesDataSourceImpl(
-            apiClient: ref.watch(DioApiClient.provider)),
-      ));
+  static final provider =
+      Provider<PrayerAlarmRepository>((ref) => PrayerAlarmRepositoryImpl(
+            timingsDataSource: PrayersTimesDataSourceImpl(
+                apiClient: ref.watch(DioApiClient.provider)),
+          ));
   final PrayersTimesDataSource timingsDataSource;
   PrayerAlarmRepositoryImpl({required this.timingsDataSource});
   @override
