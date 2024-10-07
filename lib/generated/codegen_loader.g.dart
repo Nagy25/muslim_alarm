@@ -15,7 +15,7 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> ar = {
-  "app_name": "Muslim Alarm",
+  "appName": "Muslim Alarm",
   "hello": "مرحبًا"
 };
 static const Map<String,dynamic> en = {

@@ -14,7 +14,6 @@ class NotifierListener<T extends StateNotifier<V>, V> extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ref.listen<V>(provider, (previous, next) {
-      print("vvvvvv $next");
       onChange(next, previous);
     });
     return child;

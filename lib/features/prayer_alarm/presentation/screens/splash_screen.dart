@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:muslim_alarm/core/helpers/providers/notifier_listener.dart';
 import 'package:muslim_alarm/core/router/router_paths.dart';
 import 'package:muslim_alarm/features/prayer_alarm/presentation/providers/check_cache_notifier.dart';
 
