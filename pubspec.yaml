@@ -60,6 +60,7 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   json_serializable: ^6.8.0
   match_generator: ^0.4.2
+  mockito: ^5.4.4
   build_runner:
   flutter_gen_runner:
 
