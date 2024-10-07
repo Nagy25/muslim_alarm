@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:muslim_alarm/core/router/app_router.dart';
+import 'package:muslim_alarm/generated/codegen_loader.g.dart';
 
 class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});
@@ -17,6 +18,7 @@ class _MyAppState extends ConsumerState<MyApp> {
     return EasyLocalization(
       supportedLocales: [Locale('en'), Locale('ar')],
       path: 'assets/translations',
+      assetLoader: CodegenLoader(),
       child: FluentApp.router(
         routerConfig: router,
         title: 'Muslim Alarm',
