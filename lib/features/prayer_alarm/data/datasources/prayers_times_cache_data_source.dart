@@ -7,6 +7,7 @@ import 'package:muslim_alarm/features/prayer_alarm/data/models/timings_model.dar
 abstract class PrayersTimesCacheDataSource {
   TimingsModel? getPrayerTimes();
   Future<void> savePrayerTimes(TimingsModel timings);
+  bool hasCache();
 }
 
 class PrayersTimesCacheDataSourceImpl implements PrayersTimesCacheDataSource {
@@ -31,5 +32,10 @@ class PrayersTimesCacheDataSourceImpl implements PrayersTimesCacheDataSource {
   @override
   Future<void> savePrayerTimes(TimingsModel timings) async {
     await localClient.setJsonMap(StorageKeys.token, timings.toJson());
+  }
+
+  @override
+  bool hasCache() {
+    return localClient.hasKey(StorageKeys.token);
   }
 }

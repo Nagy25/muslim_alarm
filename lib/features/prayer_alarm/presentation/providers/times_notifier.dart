@@ -14,8 +14,6 @@ class TimesNotifier extends StateNotifier<TimesState> {
 
   final LocationService _locationService = LocationService();
 
-  Future<void> checkCachedData() async {}
-
   Future<void> fetch() async {
     state = TimesState.loading();
     final location = await _locationService.getCurrentPosition();

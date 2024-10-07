@@ -24,4 +24,9 @@ class PrefClient implements LocalClient {
   Future<bool> setJsonMap(String key, Map<String, dynamic> value) {
     return sharedPreferences.setString(key, jsonEncode(value));
   }
+
+  @override
+  bool hasKey(String key) {
+    return sharedPreferences.containsKey(key);
+  }
 }
