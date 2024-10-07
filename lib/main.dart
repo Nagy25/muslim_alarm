@@ -5,9 +5,11 @@ import 'package:muslim_alarm/my_app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final sharedPreferences = await SharedPreferences.getInstance();
   runApp(ProviderScope(overrides: [
-    PrefClient.provider.overrideWithValue(
-      PrefClient(sharedPreferences: await SharedPreferences.getInstance()),
+    PrefClient.provider.overrideWith(
+      (_) => PrefClient(sharedPreferences: sharedPreferences),
     )
   ], child: const MyApp()));
 }

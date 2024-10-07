@@ -1,20 +1,24 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
+import 'package:fluent_ui/fluent_ui.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:muslim_alarm/core/router/app_router.dart';
 
-class MyApp extends StatefulWidget {
+class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  ConsumerState<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends ConsumerState<MyApp> {
   @override
   Widget build(BuildContext context) {
+    final router = ref.read(AppRouter.provider).router;
     return EasyLocalization(
       supportedLocales: [Locale('en'), Locale('ar')],
       path: 'assets/translations',
-      child: MaterialApp(
+      child: FluentApp.router(
+        routerConfig: router,
         title: 'Muslim Alarm',
       ),
     );
