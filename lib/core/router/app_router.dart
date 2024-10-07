@@ -12,7 +12,7 @@ class AppRouter {
   final router = GoRouter(
       routes: RouterPaths.values
           .map((route) => GoRoute(
-              path: route.matchAny(any: () => route.path ?? route.name),
+              path: route.matchAny(any: () => route.path ?? "/${route.name}"),
               name: route.name,
               builder: (_, state) {
                 return route.matchAny(
