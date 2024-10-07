@@ -39,6 +39,9 @@ dependencies:
   # location
   geolocator: ^13.0.1
 
+  # ui
+  fluent_ui: ^4.9.1
+
 dependency_overrides:
   uuid: any
 
