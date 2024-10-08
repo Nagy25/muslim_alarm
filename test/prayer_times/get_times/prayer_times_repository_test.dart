@@ -20,18 +20,7 @@ void main() {
   test('test getPrayerTimes', () async {
     final double lat = 0.0;
     final double long = 0.0;
-    final Timings timings = Timings(
-        fajr: 'fajr',
-        sunrise: 'sunrise',
-        dhuhr: 'dhuhr',
-        asr: 'asr',
-        sunset: 'sunset',
-        maghrib: 'maghrib',
-        isha: 'isha',
-        imsak: 'imsak',
-        midnight: 'midnight',
-        firstthird: 'firstthird',
-        lastthird: 'lastthird');
+    final Timings timings = Timings.empty();
     when(mockPrayerAlarmRepositoryTest.getPrayerTimes(lat: lat, long: long))
         .thenAnswer((_) async => Right(timings));
 
