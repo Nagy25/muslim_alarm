@@ -1,3 +1,6 @@
+import 'package:dartz/dartz.dart';
+import 'package:muslim_alarm/core/failures/failure.dart';
+
 abstract class CheckCacheRepository {
-  bool checkCache();
+  Either<Failure, bool> checkCache();
 }
