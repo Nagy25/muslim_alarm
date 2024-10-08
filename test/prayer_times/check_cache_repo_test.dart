@@ -1,20 +1,20 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:muslim_alarm/features/prayer_alarm/domain/repositories/check_cache_repository.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
+import 'check_cache_repo_test.mocks.dart';
 
 // Create Mock for the CheckCacheRepository
-class MockPrayerTimesCacheRepo extends Mock implements CheckCacheRepository {}
+class PrayerTimesCacheRepoTest extends Mock implements CheckCacheRepository {}
 
+@GenerateMocks([PrayerTimesCacheRepoTest])
 void main() {
-  late MockPrayerTimesCacheRepo mockPrayerTimesCacheRepo;
+  late PrayerTimesCacheRepoTest mockPrayerTimesCacheRepo;
 
   setUp(() async {
-    // Mocking SharedPreferences initialization
-    SharedPreferences.setMockInitialValues({});
-
     // Initialize the mock repository
-    mockPrayerTimesCacheRepo = MockPrayerTimesCacheRepo();
+    mockPrayerTimesCacheRepo = MockPrayerTimesCacheRepoTest();
   });
 
   test('should return true when cache is available', () {
