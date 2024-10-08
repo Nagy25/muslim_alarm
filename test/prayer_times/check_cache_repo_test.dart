@@ -29,6 +29,7 @@ void main() {
 
     // Assert: Check that the result is true
     expect(result, Right(true));
+    expect(result, isA<Right<Failure, bool>>());
   });
 
   test('should return failure when cache is not available', () {
