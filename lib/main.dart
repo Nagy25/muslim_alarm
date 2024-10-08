@@ -11,8 +11,6 @@ Future<void> main() async {
 
   final sharedPreferences = await SharedPreferences.getInstance();
   runApp(ProviderScope(overrides: [
-    PrefClient.provider.overrideWith(
-      (_) => PrefClient(sharedPreferences: sharedPreferences),
-    )
+    PrefClient.overrideProvider(sharedPreferences),
   ], child: const MyApp()));
 }

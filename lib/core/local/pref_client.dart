@@ -12,6 +12,8 @@ class PrefClient implements LocalClient {
   static final provider = Provider<LocalClient>((ref) {
     throw UnimplementedError('Must override the provider in the main.');
   });
+  static overrideProvider(SharedPreferences sharedPreferences) => provider
+      .overrideWith((_) => PrefClient(sharedPreferences: sharedPreferences));
 
   @override
   Map<String, dynamic>? getJsonMap(String key) {
