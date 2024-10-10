@@ -7,16 +7,20 @@ import 'package:muslim_alarm/features/prayer_alarm/presentation/states/times_sta
 class TimesNotifier extends StateNotifier<TimesState> {
   static final provider =
       StateNotifierProvider<TimesNotifier, TimesState>((ref) {
-    return TimesNotifier(getPrayerTimes: ref.read(GetPrayerTimes.provider));
+    final getPrayerTimes = ref.watch(GetPrayerTimes.provider);
+    final locationService = LocationServiceImp();
+    return TimesNotifier(
+        getPrayerTimes: getPrayerTimes, locationService: locationService);
   });
-  TimesNotifier({required this.getPrayerTimes}) : super(TimesState.initial());
+  TimesNotifier({required this.getPrayerTimes, required this.locationService})
+      : super(TimesState.initial());
   final GetPrayerTimes getPrayerTimes;
 
-  final LocationService _locationService = LocationService();
+  final LocationService locationService;
 
   Future<void> fetch() async {
     state = TimesState.loading();
-    final location = await _locationService.getCurrentPosition();
+    final location = await locationService.getCurrentPosition();
     final data = await getPrayerTimes.execute(
         userLocation: UserLocation(
             latitude: location.latitude, longitude: location.longitude));
