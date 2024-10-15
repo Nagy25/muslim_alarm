@@ -1,8 +1,8 @@
 name: muslim_alarm
-description: "A new Flutter project."
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+description: "Flutter project for Muslim prayer time."
+
+
+publish_to: 'none'
 
 
 version: 1.0.0+1
@@ -30,7 +30,7 @@ dependencies:
   easy_localization: ^3.0.7
 
   # state management
-  flutter_riverpod: ^2.5.1
+  flutter_riverpod: ^2.5.3
 
 
   # models
@@ -44,7 +44,7 @@ dependencies:
   geolocator: ^13.0.1
 
   # ui
-  fluent_ui: ^4.9.1
+  fluent_ui: ^4.9.2
 
   # router
   go_router: ^14.3.0
