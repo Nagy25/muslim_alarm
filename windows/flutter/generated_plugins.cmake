@@ -5,7 +5,7 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   bitsdojo_window_windows
   geolocator_windows
-  screen_retriever
+  screen_retriever_windows
   system_tray
   window_manager
 )
